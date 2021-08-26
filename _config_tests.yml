@@ -1,12 +1,58 @@
-# For local development including the test pages, use the option
-# --config _config.yml,_config_dev.yml,_config_test.yml
+# Regression tests
+# To include the pages in /_tests in the local build, run jekyll with the option
+# --config _config.yml,_config_dev.yml,_config_tests.yml
 
-exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
-# , "docs/tests/"
-]
+# Define Jekyll collections
+collections:
+  tests:
+    permalink: "/:collection/:path:output_ext"
+    output: true
+  test_collection_1:
+    permalink: "/:collection/:path:output_ext"
+    output: true
+  test_collection_2:
+    permalink: "/:collection/:path:output_ext"
+    output: true
+  test_collection_3:
+    permalink: "/:collection/:path:output_ext"
+    output: true
+  test_collection_4:
+    permalink: "/:collection/:path:output_ext"
+    output: true
+  test_collection_4:
+    permalink: "/:collection/:path:output_ext"
+    output: true
 
-# Uncommenting the following line doesn't work - see https://github.com/jekyll/jekyll/issues/4791
-# include: ["docs/tests/"]
+just_the_docs:
+  collections:
+    tests:
+      name: Tests
+      nav_exclude: false
+      nav_fold: true
+      search_exclude: true
+    test_collection_1:
+      name: Test Collection 1
+      nav_exclude: false
+      nav_fold: true
+      search_exclude: true
+    test_collection_2:
+      name: Test Collection 2
+      nav_exclude: false
+      nav_fold: true
+      search_exclude: false
+    test_collection_3:
+      name: Test Collection 3
+      nav_exclude: false
+      nav_fold: false
+      search_exclude: true
+    test_collection_4:
+      name: Test Collection 4
+      nav_exclude: true
+      search_exclude: false
+    test_collection_5:
+      name: Test Collection 5
+      nav_exclude: true
+      search_exclude: true
 
 # callouts_opacity: 0.15
 # callouts_level: loud
